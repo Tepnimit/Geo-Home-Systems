@@ -6,7 +6,7 @@
 <body>
 <?php
 
-		require 'db/connect.php';
+		require 'connect.php';
                 $sql = "SELECT * FROM meal";
                 $result = $conn->query($sql);
 //print_r($result);
@@ -59,8 +59,9 @@
                                                         //google.maps.event.addDomListener(window, 'load', initialize);
                                                         </script>
                                                         <div id="googleMap<?php echo $count; ?>" style="width:200px;height:150px;"></div>
+							<script type="text/javascript">initialize();</script>
                                                         <?php
-                                                        echo '<script type="text/javascript">initialize();</script>';
+                                                        //echo '<script type="text/javascript">initialize();</script>';
                                                         ?>
                                                 </td>
                                         </tr>
@@ -68,10 +69,10 @@
                                 ?>
                         </tr>
                         <?php
-                } else {
-                        echo "0 Results";
-                }
-                ?>
+                	} else {
+                        	echo "0 Results";
+                	}
+                	?>
 
 </body>
 </html>

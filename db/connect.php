@@ -1,7 +1,6 @@
 <?php
 echo 'Connection Page'; 
 # !!!! Come back to test this line na
-#$db = new mysqli('127.0.0.1', 'root', 'root', 'appx'); 
 $servername = "localhost";
 $username = "root";
 $password = "root";
