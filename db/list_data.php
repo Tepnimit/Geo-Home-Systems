@@ -24,6 +24,9 @@
                                 <td> Description </td>
                                 <td> Location </td>
                         </tr>
+<br>
+<a href="/map.php"> Map </a>
+<br>
                         <?php if ($result->num_rows > 0) { ?>
                                 <tr>
                                         <?php
