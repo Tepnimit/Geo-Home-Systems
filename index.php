@@ -19,8 +19,8 @@
           <li><a>About us</a></li>
         </ul>  
 	<ul class="nav navbar-nav navbar-right">
-	  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-	  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	  <li><a href="registration.php#tabs-signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+	  <li><a href="registration.php#tabs-login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 	</ul>
     </div>
   </nav>
