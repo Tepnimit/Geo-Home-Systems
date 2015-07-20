@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<div id="googleMap" style="width:500px;height:380px;"></div>
+<div id="googleMap" style="width:800px;height:380px;"></div>
 <?php
 	print "Map Page ";
 	require 'db/connect.php';

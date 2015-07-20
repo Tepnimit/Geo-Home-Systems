@@ -26,7 +26,7 @@
   </nav>
 <div class="container">
   <div class="jumbotron" align="center">
-    <h1><font color="CadetBlue">Geo<span class="glyphicon glyphicon-home"></span> Cooking</font></h1>
+    <h1><font color="CadetBlue">Geo <span class="glyphicon glyphicon-home"></span> Cooking</font></h1>
     <p>Don't waste your time to cook. Just search, enjoy eating and Done !</p> 
   </div>
   <div class="row">
@@ -65,9 +65,9 @@
 	  </p>
     </div>
     <div class="col-sm-4" align="center">
-      <h3>Sellers meet Buyers</h3>        
-      <p>I am a seller</p>
-      <p>I am a buyer</p>
+      <h3>Sellers meet Buyers</h3>
+      <li><a href="registration.php">I am a seller</a></li>
+      <li><a href="registration.php">I am a buyer</a></li>
     </div>
   </div>
   <br>
@@ -77,10 +77,10 @@
           <p><img src="http://megaicons.net/static/img/icons_sizes/27/89/512/metroui-other-search-icon.png" class="img-rounded" alt"Searching" width=150px height=150px ></p>
         </div>
         <div class="col-sm-4" align="center">
-          <p><img src="http://www.siteslab.org/cwcon/2014/sites/default/files/public/dining.png" class="img-rounded" alt"Eating" width=150px height=150px ></p>
+          <p><img src="http://www.bizbuysell.com/brokerdirectory/images/icons/hands.png" class="img-rounded" alt"Buyer and Seller" width=150px height=150px ></p>
         </div>
         <div class="col-sm-4" align="center">
-          <p><img src="http://www.bizbuysell.com/brokerdirectory/images/icons/hands.png" class="img-rounded" alt"Buyer and Seller" width=150px height=150px ></p>
+          <p><img src="http://www.siteslab.org/cwcon/2014/sites/default/files/public/dining.png" class="img-rounded" alt"Eating" width=150px height=150px ></p>
         </div>
       </div>
     </div>
