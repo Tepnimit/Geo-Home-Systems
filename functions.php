@@ -2,7 +2,8 @@
 
   function format_email($info, $format){
     //set the root
-    $root = $_SERVER['DOCUMENT_ROOT'].'/dev/tutorials/email_signup';
+    $root = $_SERVER['DOCUMENT_ROOT'].'/template';
+echo $root;
  
     //grab the template content
     $template = file_get_contents($root.'/signup_template.'.$format);
@@ -11,7 +12,7 @@
     $template = ereg_replace('{USERNAME}', $info['username'], $template);
     $template = ereg_replace('{EMAIL}', $info['email'], $template);
     $template = ereg_replace('{KEY}', $info['key'], $template);
-    $template = ereg_replace('{SITEPATH}','http://site-path.com', $template);
+    $template = ereg_replace('{SITEPATH}','http://52.2.223.106', $template);
          
     //return the html of the template
     return $template;
@@ -26,13 +27,23 @@
     $transport = Swift_MailTransport::newInstance();
     $mailer = Swift_Mailer::newInstance($transport);
     $message = Swift_Message::newInstance();
-    $message ->setSubject('Welcome to Site Name');
-    $message ->setFrom(array('noreply@sitename.com' => 'Site Name'));
+    $message ->setSubject('Welcome to Geo Home For you');
+    $message ->setFrom(array('noreply@geomail.com' => 'Site Name'));
     $message ->setTo(array($info['email'] => $info['username']));
-     
     $message ->setBody($body_plain_txt);
     $message ->addPart($body, 'text/html');
-             
+echo "WHAT";
+    echo $message;
+            
+//$to = "tepnimitl@gmail.com";
+//$sub = "Te_subject_of_your_email";
+//$mess = "Dear User, \r\n\r\n";
+//$mess .= "This is your message \r\n";
+//$headers = "From: noreply@.com \r\n";
+//$test = mail($to,$subj,$mess,$headers); 
+//if (test){echo "TRUE";}else{echo "FALSE";}
+
+ 
     $result = $mailer->send($message);
      
     return $result;

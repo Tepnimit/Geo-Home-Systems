@@ -2,6 +2,7 @@
 <html>
         <head>
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	</head>
 <body>
 <?php
@@ -12,6 +13,8 @@
 //print_r($result);
                 ?>
                 // Draw Table
+<div class="table-responsive">
+  <table class="table">
                 <style>
                         table, th, td {
                                 border: 1px solid black;
@@ -76,6 +79,8 @@
                         	echo "0 Results";
                 	}
                 	?>
+   </table>
+</div>
 
 </body>
 </html>

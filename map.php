@@ -2,11 +2,13 @@
 <html>
 <head>
 <title>Maps Multiple Markers</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 </head>
 
 <body>
-<div id="googleMap" style="width:800px;height:380px;"></div>
+  <?php require 'headerbar.php'; ?>
+<div id="googleMap" style="width:700px;height:380px;"></div>
 <?php
 	print "Map Page ";
 	require 'db/connect.php';
@@ -47,7 +49,7 @@ alert(locations);
 
 			 // var myCenter<?php echo $count;?> = new google.maps.LatLng(lat,lng);
 			  var map = new google.maps.Map(document.getElementById("googleMap"), {
-			    zoom: 1,
+			    zoom: 2,
    			    center: new google.maps.LatLng(38.879970, -77.106770),
 			    mapTypeId: google.maps.MapTypeId.ROADMAP
 			  });

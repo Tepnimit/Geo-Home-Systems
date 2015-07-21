@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
+<?php include 'headerbar.php'; ?>
 <!--
 <script type="text/javascript" src="jquery-1.8.0.min.js"></script> 
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
@@ -34,6 +35,9 @@ input[type=text]:focus
 -->
 <?php
 require('db/connect.php');
+include_once 'config.php';
+include_once 'functions.php';
+
 // Initial Values
 $username = mysql_real_escape_string($_POST['username']);
 $password = mysql_real_escape_string($_POST['password']);
@@ -103,20 +107,21 @@ printf($userid);
             $key = md5($key);
 
             $confirm = $conn->query("INSERT INTO `confirm` VALUES(NULL,'$userid','$key','$email')");
-
             if($confirm){
               echo " Signup Sucessfully ";
               $message = "Signup Sucessfully!!";
-              include_once 'inc/php/swift/swift_required.php';
+              include_once 'source_code/swiftmailer/lib/swift_required.php';
 
               $info = array('username' => $username, 'email' => $email, 'key' => $key);
-
+echo "Before sending email  ";
               //Send the email
-              if(send_mail($info)){
+              if(send_email($info)){
+echo " SENDING AN EMAIL....... ";
                 //email send
                 $action['result']='success';
                 array_push($text, 'Thanks for signing up. Please check your email for confirmation!');
               }else{
+echo " Could not send confirm email ";
                 $action['result']='error';
                 array_push($text, 'Could not send confirm email');
               }
@@ -133,8 +138,6 @@ echo " Signup Done ";
         }
       }
    }
-//include 'inc/elements/header.php';
-//echo  show_errors($action);
 ?>
  
 <!-- Login and Signup forms -->
@@ -164,20 +167,29 @@ echo " Signup Done ";
   </div>
 </div>
 -->
+<?= show_errors($action); ?>
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
-            <legend><a href="index.php"><i class="glyphicon glyphicon-home"></i></a> Sign up!</legend>
+        <div class="col-xs-10 col-sm-10 col-md-4 well well-sm">
+            <legend><i class="glyphicon glyphicon-user"></i></a> Sign up!</legend>
             
             <form action="" method="post" class="form" role="form">
             <div class="row">
-                <div class="col-xs-6 col-md-6">
+                <div class="col-xs-10 col-md-10">
                     <input class="form-control" id="username" name="username" placeholder="Username" type="text" required autofocus />
                 </div>
             </div>
+            <div class="row">
+        <div class="col-xs-10 col-md-10">
             <input class="form-control" id="email" name="email" placeholder="Your Email" type="email" />
+                </div>
+            </div>
+            <div class="row">
+        <div class="col-xs-10 col-md-10">
             <input class="form-control" id="password" name="password" placeholder="Password" type="password" />
+                </div>
+            </div>
             <br>
             <button class="btn btn-lg btn-primary btn-block" type="submit" name="signup" value="signup">Sign up</button>
             </form>
@@ -186,6 +198,5 @@ echo " Signup Done ";
 </div>
 
 
-
-
+</body>
 </html>
