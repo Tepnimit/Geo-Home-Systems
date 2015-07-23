@@ -40,6 +40,7 @@
 	      <input type="reset"></button>
 	    </div>
 	</form>
+    <br>
     </div>
     <div class="col-sm-4" align="center">
       <h3>Search location </h3>
@@ -49,7 +50,11 @@
 	    <input type="number" name="zipcode" min="10000" max="99999">
 	    <input type="submit" value="OK">
 	  </p>
+      <br>
+      <h3>List all locations </h3>  
+        <a href="listpage.php">Click Here</a>
     </div>
+    <br>
     <div class="col-sm-4" align="center">
       <h3>Sellers meet Buyers</h3>
       <li><a href="registration.php">I am a seller</a></li>
