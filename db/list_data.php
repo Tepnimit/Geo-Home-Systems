@@ -3,6 +3,7 @@
   <head>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="codeAddress.js"></script>
    </head>
   <body>
     <?php
@@ -11,7 +12,7 @@
         $result = $conn->query($sql);
     ?>
       <br>
-      <p>Click here for full map:
+      <p> Click here for full map:
         <a href="/map.php">
           <button type="button" class="btn btn-default btn-md">
             <span class="glyphicon glyphicon-map-marker"></span> Full Map
@@ -37,33 +38,12 @@
                   <tr>
 <!-- Location data -->
                      <td width="25%"> <?php echo $row["location"]; ?>
-                       <?php
-                       $latlng = $row["location"];
-                       $latlng = preg_split("[,]", $latlng);
-                       #echo "This is latlng: " . $latlng[0] . " " . $latlng[1];
-                       ?>
                        <script type="text/javascript">
-                         var lat = "<?php echo $latlng[0]; ?>";
-                         var lng = "<?php echo $latlng[1]; ?>";
-                         var myCenter = new google.maps.LatLng(lat, lng);
-                         function initialize() {
-                           var mapProp = {
-                             center: myCenter,
-                             //center:new google.maps.LatLng(38.847723,-77.131016),
-                             zoom: 14,
-                             mapTypeId: google.maps.MapTypeId.ROADMAP
-                           };
-                           var map = new google.maps.Map(document.getElementById("googleMap<?php echo $count; ?>"), mapProp);
-                           var marker = new google.maps.Marker({position:myCenter});
-                           marker.setMap(map);
-                         }
-                         //google.maps.event.addDomListener(window, 'load', initialize);
+                         var address = '<?php echo $row["location"];?>';
+                         var count = '<?php echo $count;?>';
                        </script>
-                       <div id="googleMap<?php echo $count; ?>" style="width:200px;height:150px;"></div>
-                       <script type="text/javascript">initialize();</script>
-                       <?php
-                       //echo '<script type="text/javascript">initialize();</script>';
-                       ?>
+                       <div id='map-canvas<?php echo $count;?>' style="width:200px;height:150px;"></div>
+                       <script type="text/javascript">codeAddress(count,address); </script>
                      </td>
 
 <!-- Other data -->
