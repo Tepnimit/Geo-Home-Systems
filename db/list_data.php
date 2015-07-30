@@ -3,7 +3,7 @@
   <head>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="codeAddress.js"></script>
+    <script src="codeAddress2.js"></script>
    </head>
   <body>
     <?php
@@ -13,7 +13,7 @@
     ?>
       <br>
       <p> Click here for full map:
-        <a href="/map.php">
+        <a href="map.php">
           <button type="button" class="btn btn-default btn-md">
             <span class="glyphicon glyphicon-map-marker"></span> Full Map
           </button>
@@ -25,11 +25,10 @@
       <table class="table">
         <style> table, th, td {border: 0px solid black;} </style>
            <table style="width:75%">
-              <?php if ($result->num_rows > 0) { ?>
-                  <?php
+              <?php if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                       $count += 1;
-                  ?>
+              ?>
                   <tr>
                     <td>
                       <br> <!-- Blank -->

@@ -4,9 +4,9 @@
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script src="/callmap.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="db/codeAddress.js"></script>
+    <script src="db/codeAddress2.js"></script>
   </head>
-  <body>
+  <body background="http://www.sprintdubai.com/images/bgMain.jpg">
     <?php require 'headerbar.php'; ?>
     <?php
       require 'db/connect.php';	//Connect to DB

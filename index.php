@@ -8,13 +8,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body background="http://www.dualimg.com/wp-content/wallpapers/20130117/yqawoollid524.jpg">
   <?php require 'headerbar.php'; ?>
 <div class="container">
-  <div class="jumbotron" align="center">
-    <h1><font color="CadetBlue">Geo <span class="glyphicon glyphicon-home"></span> UUUU</font></h1>
+  <div class="jumbotron" style="background-color:transparent"  align="center">
+    <h1><font color="CadetBlue">Geo <span class="glyphicon glyphicon-home"></span> 4U</font></h1>
     <p>Don't waste your time. Just search, Like it, then it's yours!</p> 
   </div>
+<div class="container">
   <div class="row">
     <div class="col-sm-4" align ="center">
       <h3><div align="center">Add your property</div></h3>
@@ -43,7 +44,7 @@
     <br>
     </div>
     <div class="col-sm-4" align="center">
-      <h3>Search location </h3>
+      <h3>List Full Map </h3>
 	<form action=map.php method="post">
 	  <p>Enter Zip code</p>
 	  <p>
@@ -61,6 +62,7 @@
       <li><a href="registration.php">I am a buyer</a></li>
     </div>
   </div>
+</div>
   <br>
     <div class="jumbotron" align="center">
       <div class="row">

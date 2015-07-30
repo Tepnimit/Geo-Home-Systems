@@ -5,14 +5,12 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 </head>
-
-<body>
-  <?php require 'headerbar.php'; ?>
-<div id="googleMap" style="width:700px;height:380px;"></div>
+<body background="http://www.sprintdubai.com/images/bgMain.jpg">
+<?php require 'headerbar.php'; ?>
+<div id="googleMap" style="width:100%;height:450px;"></div>
 <?php
-	print "Map Page ";
 	require 'db/connect.php';
-?><br>
+?>
 <script>var locations = []; </script>
 <?php
 	$sql = "SELECT location from meal";
@@ -37,7 +35,6 @@
 locations.push([lat,lng]);
 
 			
-//alert(locate);
 		</script>
 			<?php
 		}
@@ -45,7 +42,6 @@ locations.push([lat,lng]);
 ?>
 			<script type="text/javascript">
 //initialize();
-alert(locations);
 
 			 // var myCenter<?php echo $count;?> = new google.maps.LatLng(lat,lng);
 			  var map = new google.maps.Map(document.getElementById("googleMap"), {
