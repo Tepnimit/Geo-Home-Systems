@@ -35,7 +35,7 @@ echo $root;
 echo "WHAT";
     echo $message;
             
-//$to = "tepnimitl@gmail.com";
+//$to = "xxx@gmail.com";
 //$sub = "Te_subject_of_your_email";
 //$mess = "Dear User, \r\n\r\n";
 //$mess .= "This is your message \r\n";
